@@ -1,0 +1,39 @@
+﻿body {
+    padding-top: 49px;
+    background-color: #f8f8f8;
+}
+
+#content {
+    border: #e7e7e7 solid 1px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #f1f1f1;
+    display: none;
+}
+
+#question {
+    color: #285e8e;
+}
+
+.button-bottom {
+    margin: 0 10px 10px 10px;
+}
+
+.input-group-poll {
+    padding: 10px 10px 10px 10px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.text-center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.input-group-addon {
+    min-width: 45px;
+}
