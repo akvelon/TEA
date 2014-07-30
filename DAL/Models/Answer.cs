@@ -18,6 +18,14 @@ namespace DAL.Models
         public int AnswerId { get; set; }
 
         /// <summary>
+        /// Gets or sets the result.
+        /// </summary>
+        /// <value>
+        /// The result.
+        /// </value>
+        public virtual Result Result { get; set; }
+
+        /// <summary>
         /// Gets or sets the left story.
         /// </summary>
         /// <value>
@@ -42,6 +50,6 @@ namespace DAL.Models
         /// The relation between left and right stories.
         /// </value>
         [Required]
-        public Relation Relation { get; set; }
+        public StoryRelation Relation { get; set; }
     }
 }

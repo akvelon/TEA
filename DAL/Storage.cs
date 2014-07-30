@@ -1,4 +1,7 @@
-﻿namespace DAL
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity.Validation;
+
+namespace DAL
 {
     using Models;
     using System;
@@ -15,11 +18,11 @@
         /// Gets the stories.
         /// </summary>
         /// <returns>Story array</returns>
-        public static Story[] GetStories(Func<Story, bool> pred)
+        public static Story[] GetStories()
         {
             using (var db = new TeaContext())
             {
-                return db.Stories.Where(pred).ToArray();
+                return db.Stories.ToArray();
             }
         }
         #endregion
@@ -29,32 +32,26 @@
         /// Gets the polls.
         /// </summary>
         /// <returns>Poll array</returns>
-        public static Poll[] GetPolls(Func<Poll, bool> pred)
+        public static Poll[] GetPolls()
         {
             using (var db = new TeaContext())
             {
-                return db.Polls.Where(pred).ToArray();
+                return db.Polls.ToArray();
             }
         }
 
         /// <summary>
         /// Gets the poll matching the predicate.
         /// </summary>
-        /// <param name="pred">The pred.</param>
-        /// <returns>New poll or null if not found</returns>
-        public static Poll GetPoll(Func<Poll, bool> pred)
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        /// New poll or null if not found
+        /// </returns>
+        public static Poll GetPollById(int id)
         {
             using (var db = new TeaContext())
             {
-                var poll = db.Polls.FirstOrDefault(pred);
-
-                if (poll != null)
-                {
-                    db.Entry(poll).Collection("Stories").Load();
-                    db.Entry(poll).Collection("Results").Load();
-                }
-
-                return poll;
+                return db.Polls.Include("Results").Include("Stories").FirstOrDefault(p => p.PollId == id);
             }
         }
 
@@ -92,11 +89,35 @@
         /// Gets the results.
         /// </summary>
         /// <returns>Result array</returns>
-        public static Result[] GetResults(Func<Result, bool> pred)
+        public static Result[] GetResults()
         {
             using (var db = new TeaContext())
             {
-                return db.Results.Where(pred).ToArray();
+                return db.Results.ToArray();
+            }
+        }
+
+        public static int AddResult(int pollId, List<Answer> data)
+        {
+            using (var db = new TeaContext())
+            {
+                var poll = db.Polls.Find(pollId);
+                if (poll == null)
+                    return 0;
+
+                var result = new Result() { Answers = data };
+                poll.Results.Add(result);
+
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    
+                }
+
+                return result.ResultId;
             }
         }
         #endregion

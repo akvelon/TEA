@@ -10,33 +10,24 @@
 namespace Presentation {
     
     
-    public partial class ViewPoll {
+    public partial class Vote {
         
         /// <summary>
-        /// PollView control.
+        /// VoteView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView PollView;
+        protected global::System.Web.UI.WebControls.ListView VoteView;
         
         /// <summary>
-        /// BottomPanel control.
+        /// ButtonVote control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel BottomPanel;
-        
-        /// <summary>
-        /// TotalVoted control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TotalVoted;
+        protected global::System.Web.UI.WebControls.Button ButtonVote;
     }
 }

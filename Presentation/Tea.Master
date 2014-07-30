@@ -17,9 +17,8 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="/">Tea</a>
         </div>
-
+        <p class="navbar-text"><asp:ContentPlaceHolder ID="QuestionPlaceholder" runat="server"></asp:ContentPlaceHolder></p>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <p class="navbar-text" id="question"><asp:ContentPlaceHolder ID="QuestionPlaceholder" runat="server"></asp:ContentPlaceHolder></p>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/CreatePoll.aspx">Create a new poll</a></li>
             <li><a href="#">About</a></li>
@@ -29,6 +28,7 @@
     </nav>
    <form id="Form" runat="server" autocomplete="off">
         <div id="content">
+
             <asp:ContentPlaceHolder ID="ContentPlaceholder" runat="server"></asp:ContentPlaceHolder>
         </div>
     </form>

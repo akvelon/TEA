@@ -34,6 +34,11 @@
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Answer>()
+                .HasRequired(a => a.LeftStory)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Answer>()
                 .HasRequired(a => a.RightStory)
                 .WithMany()
                 .WillCascadeOnDelete(false);

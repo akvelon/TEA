@@ -12,5 +12,5 @@
             <input type="text" placeholder="Type here to add another text field" class="form-control input-poll" autofocus=""/>
         </div>
     </div>
-    <asp:Button type="button" ID="ButtonCreate" class="btn btn-primary button-bottom" Text="Create" OnClick="ButtonCreate_Click" runat="server" disabled/>
+    <asp:Button type="button" ID="ButtonCreate" class="btn btn-primary button-bottom" Text="Create" OnClick="ButtonCreate_Click" runat="server" disabled="disabled"/>
 </asp:Content>

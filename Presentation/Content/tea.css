@@ -3,6 +3,26 @@
     background-color: #f8f8f8;
 }
 
+table {
+    table-layout: fixed;
+}
+
+table th, table td {
+    overflow: hidden;
+}
+
+textarea {
+    resize: none;
+}
+
+th {
+    text-align: center;
+}
+
+.form-control[disabled] {
+    cursor: default;
+}
+
 #content {
     border: #e7e7e7 solid 1px;
     border-bottom-left-radius: 5px;
@@ -15,6 +35,16 @@
 
 #question {
     color: #285e8e;
+}
+
+.general-information {
+    font-weight: bold;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.general-information-right {
+    float: right;
 }
 
 .button-bottom {

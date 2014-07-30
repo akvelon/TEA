@@ -87,6 +87,7 @@
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\tea.js" />
     <Content Include="ViewPoll.aspx" />
+    <Content Include="Vote.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -121,6 +122,13 @@
     </Compile>
     <Compile Include="ViewPoll.aspx.designer.cs">
       <DependentUpon>ViewPoll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vote.aspx.cs">
+      <DependentUpon>Vote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vote.aspx.designer.cs">
+      <DependentUpon>Vote.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

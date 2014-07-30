@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Tea.Master" AutoEventWireup="true" CodeBehind="ViewPoll.aspx.cs" Inherits="Presentation.ViewPoll" %>
 <asp:Content ContentPlaceHolderID="HeadPlaceholder" runat="server"></asp:Content>
-<asp:Content ContentPlaceHolderID="QuestionPlaceholder" runat="server"></asp:Content>
+<asp:Content ContentPlaceHolderID="QuestionPlaceholder" runat="server">
+    View poll
+</asp:Content>
 <asp:Content ContentPlaceHolderID="ContentPlaceholder" runat="server">
     <asp:ListView ID="PollView" runat="server">
         <LayoutTemplate>
@@ -24,4 +26,7 @@
             <div class="text-center">No data to show for such a request</div>
         </EmptyDataTemplate>
     </asp:ListView>
+    <asp:Panel ID="BottomPanel" runat="server">
+        <div class="general-information">Vote count:<asp:Label ID="TotalVoted" CssClass="general-information-right" runat="server"></asp:Label></div>
+    </asp:Panel>
 </asp:Content>

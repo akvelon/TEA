@@ -1,6 +1,7 @@
 ﻿$(function() {
-    var taskCount = 1;
+    var taskCount = 1; // total tasks
 
+    // checks if button must be disabled or enabled
     var setButton = function() {
         if ($('.has-error').length == 0 && $('.input-poll').length > 1) {
             $(':submit').prop('disabled', false);
@@ -9,6 +10,7 @@
         }
     }
 
+    // adds 'has-error' class to incorrect fields and removes it if everything is ok
     var inputHandler = function(event) {
         var item = $(this);
 
@@ -22,15 +24,19 @@
         setButton();
     }
 
+    // handles user input in the last inputbox
     var appendHandler = function (event) {
         var hasText = true;
 
+        // checks if every previous inputbox is filled in
         $('.input-poll').each(function() {
             if ($(this).val() == '') {
                 hasText = false;
+                return false;
             }
         });
 
+        // if so, changes the last inputbox and adds another one
         if (hasText) {
             $('.input-poll:last').attr('placeholder', 'Leave this field filled in or remove it')
                 .on("keyup", inputHandler)
@@ -50,6 +56,7 @@
         }
     }
 
+    // removes inputbox
     var removeHandler = function(event) {
         $(this).parent().remove();
 

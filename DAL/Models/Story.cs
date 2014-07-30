@@ -27,7 +27,6 @@ namespace DAL.Models
         /// User story description.
         /// </value>
         [Required]
-        [MaxLength(250, ErrorMessage = "Story description is too long")]
         public string Description { get; set; }
 
         /// <summary>

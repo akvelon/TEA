@@ -73,7 +73,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Poll.cs" />
-    <Compile Include="Models\Relation.cs" />
+    <Compile Include="Models\StoryRelation.cs" />
     <Compile Include="Models\Result.cs" />
     <Compile Include="Models\Story.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
